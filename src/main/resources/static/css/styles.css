@@ -1,0 +1,81 @@
+/* Identidad inspirada en la UFPS: rojo y blanco, en tonos suaves.
+   Tipografía estilo Linux: Ubuntu, con Cantarell / Noto Sans / DejaVu como respaldo. */
+:root{
+  --rojo:#b4283c; --rojo-osc:#8e1f30; --rojo-claro:#f6e9eb;
+  --grafito:#3b3d42; --tinta:#2c2e33; --gris:#7b7e86;
+  --fondo:#f3f1ee; --papel:#fbfaf8; --crema:#f7f5f2; --borde:#e6e2dc;
+  --radio:12px; --sombra:0 2px 12px rgba(40,30,30,.06);
+  --fuente:"Ubuntu","Cantarell","Noto Sans","DejaVu Sans","Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--fondo);color:var(--tinta);font:400 16px/1.6 var(--fuente)}
+h1,h2{font-family:var(--fuente);margin:0;font-weight:500}
+
+/* Cabecera */
+.franja{background:var(--grafito);color:#d9d6d1;font-size:.78rem;padding:8px 40px;letter-spacing:.05em}
+.top{background:var(--rojo);color:#fbf3f3;padding:28px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.brand{display:flex;gap:20px;align-items:center}
+.crest{width:60px;height:60px;border-radius:50%;background:var(--papel);color:var(--rojo);display:grid;place-items:center;font-weight:700;font-size:.9rem;letter-spacing:.06em}
+.brand h1{font-size:1.45rem;letter-spacing:.02em}
+.brand p{margin:4px 0 0;font-size:.95rem;opacity:.85}
+.docs{color:#fbf3f3;border:1px solid rgba(255,255,255,.45);padding:9px 18px;border-radius:999px;text-decoration:none;font-size:.88rem;transition:background .2s}
+.docs:hover{background:rgba(255,255,255,.14)}
+
+/* Estructura */
+.layout{max-width:1180px;margin:44px auto;padding:0 28px;display:grid;grid-template-columns:1.35fr 1fr;gap:36px;align-items:start}
+@media(max-width:900px){.layout{grid-template-columns:1fr;margin:28px auto}}
+.card{background:var(--papel);border:1px solid var(--borde);border-radius:var(--radio);padding:36px;box-shadow:var(--sombra)}
+@media(max-width:560px){.card{padding:22px}}
+.card h2{font-size:1.15rem;color:var(--rojo-osc);margin:36px 0 10px;display:flex;align-items:center;gap:12px}
+.card h2:first-child{margin-top:0}
+.hint{margin:0 0 22px;color:var(--gris);font-size:.9rem}
+
+/* Formularios */
+label{display:block;font-size:.78rem;font-weight:500;color:var(--gris);margin-bottom:6px;letter-spacing:.03em}
+input,select{width:100%;padding:11px 13px;border:1px solid var(--borde);border-radius:8px;font:inherit;font-size:.95rem;color:var(--tinta);background:#fff;transition:border-color .2s,box-shadow .2s}
+input:focus,select:focus{outline:none;border-color:var(--rojo);box-shadow:0 0 0 3px rgba(180,40,60,.12)}
+input.bad,select.bad{border-color:var(--rojo);background:var(--rojo-claro)}
+.badge{font-size:.75rem;font-weight:500;background:var(--rojo-claro);color:var(--rojo-osc);padding:3px 12px;border-radius:999px}
+
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0 0}
+.chip{font-size:.8rem;background:var(--crema);color:var(--grafito);padding:6px 14px;border-radius:999px;cursor:pointer;border:1px solid var(--borde);transition:border-color .2s}
+.chip:hover{border-color:var(--rojo)}
+.chip.lider{background:var(--rojo-claro);border-color:#e9cfd3}
+
+.fila{display:grid;grid-template-columns:2fr 1fr .8fr 1fr auto;gap:16px;align-items:end;padding:22px;margin-bottom:18px;background:var(--crema);border:1px solid var(--borde);border-radius:10px}
+@media(max-width:640px){.fila{grid-template-columns:1fr 1fr}.fila .titulo{grid-column:1/-1}}
+.fila button{background:none;border:none;color:var(--gris);font-size:1.4rem;cursor:pointer;padding:6px 8px;border-radius:6px}
+.fila button:hover{color:var(--rojo);background:var(--rojo-claro)}
+
+.actions{display:flex;gap:14px;flex-wrap:wrap;margin:8px 0 28px}
+.btn{font:500 .92rem var(--fuente);padding:11px 20px;border-radius:8px;cursor:pointer;border:1px solid var(--borde);transition:background .2s,border-color .2s}
+.btn.ghost{background:transparent;color:var(--grafito)}
+.btn.ghost:hover{border-color:var(--rojo);color:var(--rojo-osc)}
+.btn.primary{width:100%;background:var(--rojo);border-color:var(--rojo);color:#fff;padding:15px;font-size:1rem}
+.btn.primary:hover{background:var(--rojo-osc)}
+.btn.primary:disabled{opacity:.6;cursor:wait}
+
+/* Mensajes */
+#mensaje{margin-top:24px}
+.msg{padding:16px 20px;border-radius:10px;font-size:.92rem;border:1px solid}
+.msg.ok{background:#eef5f0;border-color:#cfe3d5;color:#25563a}
+.msg.err{background:var(--rojo-claro);border-color:#e9cfd3;color:var(--rojo-osc)}
+.msg ul{margin:10px 0 0;padding-left:20px}
+.msg li{margin-bottom:4px}
+
+/* Productos registrados */
+.counts{display:flex;gap:16px;margin-bottom:26px}
+.count{flex:1;text-align:center;background:var(--crema);border:1px solid var(--borde);border-radius:10px;padding:18px 10px}
+.count b{display:block;font-size:1.9rem;font-weight:500;color:var(--rojo)}
+.count span{font-size:.75rem;color:var(--gris)}
+.lista{list-style:none;margin:0;padding:0;max-height:560px;overflow:auto}
+.lista li{padding:18px 4px;border-bottom:1px solid var(--borde)}
+.lista li:last-child{border-bottom:none}
+.lista strong{font-weight:500}
+.lista small{display:block;margin-top:6px;color:var(--gris);font-size:.82rem}
+.tipo{font-size:.66rem;text-transform:uppercase;letter-spacing:.08em;padding:3px 10px;border-radius:999px;color:#fff;margin-right:10px;vertical-align:middle}
+.tipo.ponencia{background:#7b7e86}.tipo.articulo{background:var(--rojo)}.tipo.software{background:var(--grafito)}
+.vacio{color:var(--gris);text-align:center;padding:44px 0}
+
+footer{background:var(--grafito);color:#bdbab5;text-align:center;font-size:.82rem;padding:24px;margin-top:56px}
+.lema{color:#e6aab3;font-weight:500}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UFPS · Producción Investigativa de Semilleros</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="franja">Universidad Francisco de Paula Santander · San José de Cúcuta, Norte de Santander</div>
+  <header class="top">
+    <div class="brand">
+      <div class="crest" aria-hidden="true">UFPS</div>
+      <div>
+        <h1>Semilleros de Investigación</h1>
+        <p>Registro de productos: ponencias, artículos y software</p>
+      </div>
+    </div>
+    <a class="docs" href="/swagger-ui/index.html" target="_blank" rel="noopener">API · Swagger</a>
+  </header>
+
+  <main class="layout">
+    <section class="card">
+      <h2>1. Semillero</h2>
+      <label for="semillero">Selecciona el semillero</label>
+      <select id="semillero"></select>
+      <div id="integrantes" class="chips"></div>
+
+      <h2>2. Productos <span id="contador" class="badge">0 / 10</span></h2>
+      <p class="hint">Entre 1 y 10 productos. Se guardan todos o ninguno.</p>
+      <datalist id="codigos"></datalist>
+      <div id="filas"></div>
+      <div class="actions">
+        <button type="button" id="agregar" class="btn ghost">+ Agregar producto</button>
+        <button type="button" id="demo" class="btn ghost">Cargar escenario de prueba</button>
+      </div>
+      <button type="button" id="enviar" class="btn primary">Registrar productos</button>
+      <div id="mensaje" role="status" aria-live="polite"></div>
+    </section>
+
+    <section class="card">
+      <h2>Productos registrados</h2>
+      <div id="conteos" class="counts"></div>
+      <ul id="lista" class="lista"></ul>
+    </section>
+  </main>
+  <footer><span class="lema">Fortalecimiento Académico</span> · UFPS · Prototipo académico</footer>
+  <script src="js/app.js"></script>
+</body>
+</html>
